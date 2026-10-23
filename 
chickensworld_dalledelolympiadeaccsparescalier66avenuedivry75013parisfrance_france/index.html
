@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Chicken’s World, recettes de poulet à Paris 13e (Dalle des Olympiades). Découvrez une carte variée : burgers, hot wings, tenders, biryani, milkshakes.">
+  <meta property="og:title" content="Chicken's World • Paris 13">
+  <meta property="og:description" content="Le rendez-vous des amateurs de poulet à Paris 13. Découvrez nos burgers, hot wings, et spécialités à partager.">
+  <meta property="og:image" content="assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Chicken's World | Poulet • Paris 13 Olympiades</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Chicken's World, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>CHICKEN'S WORLD</strong><small>RESTAURANT <i>✦</i> PARIS 13</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="tel:+33973686265"><span>☎</span><span>09 73 68 62 65</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Assortiment gourmand de poulet frit, burgers et accompagnements"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> LE SPOT DU POULET À PARIS 13</div>
+        <div class="halal-eyebrow">✧ RECETTES POULTRY · DALLE DES OLYMPIADES ✧</div>
+        <h1 id="hero-title">Le monde du poulet<br>à <em>partager.</em></h1>
+        <p>Partez à la découverte d'une carte généreuse : hot wings, tenders, burgers, biryani, milkshakes et bien plus. Découvrez Chicken’s World.</p>
+        <div class="hero-ctas"><a href="#carte" class="btn btn-gold">Découvrir notre carte <span>↗</span></a><a href="#assistant" class="btn btn-outline">✦ Trouver mon menu idéal</a></div>
+        <div class="hero-metadata"><span><span class="gold-icon">♢</span> Olympiades, Paris 13</span></div>
+      </div>
+      <div class="hero-corner">POULET GOURMAND <span>✦</span> CHICKEN'S WORLD</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Poulet & burgers</strong><small>Wings, tenders, burgers et plus</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Commandez et passez quand c'est prêt</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller menu</strong><small>Suggestion personnalisée</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Recettes variées</strong><small>Pour tous les gourmands</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">DÉCOUVREZ NOS SPÉCIALITÉS</p>
+          <h2 id="menu-title">La carte <em>Chicken’s World</em></h2>
+          <p class="sub">Des classiques du poulet et des formules généreuses à savourer sur place ou à emporter.</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tarifs à titre indicatif — non contractuel</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="burgers">Burgers</button>
+        <button class="category" data-category="hotwings">Hot wings</button>
+        <button class="category" data-category="tenders">Tenders</button>
+        <button class="category" data-category="biryani">Biryani</button>
+        <button class="category" data-category="milkshakes">Milkshakes</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Liste des allergènes non spécifiée publiquement. Contactez-nous en cas d’allergie ou d’intolérance.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> BESOIN D'IDÉE ?</p>
+          <h2>Vous hésitez&nbsp;?<br><em>Nous suggérons pour vous.</em></h2>
+          <p>Pour une pause rapide ou un repas complet, essayez notre conseiller menu basé sur nos spécialités et formules visibles.</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos envies</span><span>03&nbsp; Votre faim</span></div>
+          <p class="muted-small">Démonstration basée sur les plats principaux affichés. Les choix présentés ne remplacent pas les conseils en restaurant pour les allergènes.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head"><div class="ai-star">✦</div><div><b>Mon menu idéal</b><small>Suggéré en un clic</small></div><span class="demo-pill">DÉMO</span></div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">15 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="15">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Votre envie ?</label>
+            <select id="ai-preference">
+              <option value="tout">Peu importe</option>
+              <option value="wings">Hot wings</option>
+              <option value="tenders">Tenders</option>
+              <option value="burger">Burger</option>
+              <option value="biryani">Biryani</option>
+              <option value="autre">Autre</option>
+            </select>
+            <label for="ai-hunger">Votre appétit ?</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Classique</option>
+              <option value="petite">Petite faim</option>
+              <option value="grande">Très faim</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Déterminer ma suggestion <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">COMMANDER FACILEMENT</p>
+        <h2>Commandez. Passez. <em>Savourez.</em></h2>
+        <p class="sub">Simple, rapide, et sans attente inutile&nbsp;: choisissez, validez, récupérez.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Composez votre repas</h3><p>Ajoutez vos recettes préférées en un clic.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Planifiez le retrait</h3><p>Choisissez quand passer à l’Olympiade.</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Récupérez votre commande</h3><p>Paiement sur place. Votre repas vous attend.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">UNE ENVIE DE PLUS&nbsp;?</p>
+          <h2>Burgers, wings,<br><em>pareil plaisir&nbsp;!</em></h2>
+          <p>Ajoutez un milkshake ou une portion de wings à partager pour maximiser le plaisir.</p>
+          <a href="#carte" class="btn btn-gold">Voir la carte <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">C.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">CONTACT & VISITE</p>
+        <h2>À très vite chez <em>Chicken’s World.</em></h2>
+        <p class="sub">Retrouvez-nous dans le quartier Olympiades, Paris 13<sup>e</sup>.</p>
+        <div class="info-card"><span>⌖</span><div><b>Notre secteur</b><p>66 av. d’Ivry, Dalle des Olympiades<br>75013 Paris</p></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact</b><p><a href="tel:+33973686265">09 73 68 62 65</a></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="https://wa.me/33973686265" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=66+av+d%27Ivry+75013+Paris" target="_blank" rel="noopener noreferrer">Voir sur Maps ↗</a>
+        </div>
+        <div class="info-card"><span>✉</span><div><b>Email</b><p>Adresse e-mail non renseignée</p></div></div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>CHICKEN'S WORLD</p>
+        <strong>PARIS 13</strong>
+        <span>Dalle des Olympiades</span>
+        <div class="location-line"></div>
+        <small>Le spot du poulet frit du quartier</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">CHICKEN'S WORLD <small>POULET · PARIS 13</small></div>
+        <p>Recettes de poulet à partager, Dalle des Olympiades.</p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>66 av. d’Ivry</p>
+        <p>Dalle des Olympiades</p>
+        <p>75013 Paris</p>
+      </div>
+      <div class="footer-last">
+        <b>Un renseignement&nbsp;?</b>
+        <a href="tel:+33973686265">09 73 68 62 65</a>
+        <a href="https://wa.me/33973686265" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Chicken’s World · Prototype démonstration indépendant.</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/33973686265" target="_blank" rel="noopener noreferrer" aria-label="Nous contacter par WhatsApp">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">CHICKEN’S WORLD · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Mode local&nbsp;: aucune authentification ni connexion à un restaurant réel.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
