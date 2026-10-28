@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Chez Omar, restaurant emblématique au 47 rue de Bretagne, 75003 Paris. Découvrez un aperçu de notre carte et une démonstration de Click & Collect. Site de démonstration : aucune commande n'est transmise au restaurant.">
+  <meta property="og:title" content="Chez Omar • 47 rue de Bretagne, Paris 3e">
+  <meta property="og:description" content="Chez Omar – Référence du couscous dans le Marais, Paris. Cette page propose une démonstration numérique Click & Collect. Les plats affichés sont des exemples, non contractuels.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Chez Omar | Restaurant démonstration • Paris 3e – 47 rue de Bretagne</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Chez Omar, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>CHEZ OMAR</strong><small>RESTAURANT</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="#" aria-disabled="true" tabindex="-1"><span>☎</span><span>Numéro à confirmer</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Exemple visuel d'un plat généreux façon Chez Omar"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> DÉMONSTRATION NUMÉRIQUE — PARIS 3e</div>
+        <div class="halal-eyebrow">✧ 47 RUE DE BRETAGNE · 75003 PARIS ✧</div>
+        <h1 id="hero-title">Chez Omar<br>Un classique du <em>Marais.</em></h1>
+        <p>Référence du couscous à Paris, Chez Omar vous accueille au cœur du 3<sup>e</sup> arrondissement.<br><strong>Ce site est une démo technique de prise de commande numérique.</strong></p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Démo carte <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouver un exemple de menu</a>
+        </div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 47 rue de Bretagne, Paris 3e</span>
+          <span><span class="gold-icon">◷</span> Horaires à vérifier</span>
+        </div>
+      </div>
+      <div class="hero-corner">EXEMPLE DE CLICK & COLLECT <span>✦</span> CHEZ OMAR</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span>
+          <div><strong>Couscous maison</strong><small>Spécialité emblématique (exemple, à vérifier)</small></div>
+        </div>
+        <div class="feature"><span>◷</span>
+          <div><strong>Commande à emporter</strong><small>Un retrait sur place est proposé</small></div>
+        </div>
+        <div class="feature"><span>✦</span>
+          <div><strong>Conseiller menu</strong><small>Créer un repas selon vos envies (démonstration)</small></div>
+        </div>
+        <div class="feature"><span>♡</span>
+          <div><strong>Lieu connu du Marais</strong><small>Adresse authentique, Paris 3<sup>e</sup></small></div>
+        </div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">APERÇU CARTE (DÉMO)</p>
+          <h2 id="menu-title">La carte <em>Chez Omar</em></h2>
+          <p class="sub">Découvrez un exemple de menu inspiré des spécialités de la maison.<br><strong>Attention&nbsp;: plats et tarifs affichés à titre de démonstration uniquement. Pour la carte officielle, consulter le PDF référencé sur les annuaires.</strong></p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tarifs et contenus non contractuels, à confirmer auprès du restaurant</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas (exemple)</button>
+        <button class="category" data-category="grillades">Grillades (exemple)</button>
+        <button class="category" data-category="pates">Plats de tradition (exemples)</button>
+        <button class="category" data-category="sandwichs">Sandwichs / burgers (exemple)</button>
+        <button class="category" data-category="desserts">Desserts (exemple)</button>
+        <button class="category" data-category="boissons">Boissons (exemple)</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Les ingrédients et allergènes sont fournis à titre indicatif, sur la base de la carte PDF consultée sur un annuaire. Renseignez-vous directement auprès du restaurant pour toute question ou allergie.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> UNE DÉMO DIFFÉRENTE</p>
+          <h2>Vous hésitez ?<br><em>Essayez la suggestion menu.</em></h2>
+          <p>Cette page propose une suggestion de menu type basée sur les exemples de plats. Le résultat est purement démonstratif et ne reflète pas nécessairement la carte officielle.</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos envies</span><span>03&nbsp; Votre appétit</span></div>
+          <p class="muted-small">Conseiller fictif générant des exemples depuis la carte de démonstration. N'effectue aucune commande réelle et ne garantit pas la présence des plats ni des allergènes en l'absence de confirmation officielle.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head"><div class="ai-star">✦</div>
+          <div><b>Un exemple de sélection</b><small>Démonstration en quelques clics</small></div><span class="demo-pill">DÉMO</span></div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Une préférence culinaire ?</label>
+            <select id="ai-preference">
+              <option value="tout">Je suis ouvert à tout</option>
+              <option value="poulet">Poulet</option>
+              <option value="poisson">Poisson (exemple)</option>
+              <option value="crevettes">Crevettes</option>
+              <option value="viande">Viandes (exemple)</option>
+            </select>
+            <label for="ai-hunger">Votre appétit ?</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Normal</option>
+              <option value="petite">Faible</option>
+              <option value="grande">Grand</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Obtenir une suggestion <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header"><p class="kicker">SIMPLE & RAPIDE</p>
+        <h2>Commandez. Récupérez. <em>Dégustez.</em></h2>
+        <p class="sub">Exemple de parcours Click & Collect. Ce mode n’est pas confirmé officiellement chez Omar mais le retrait sur place est possible selon la fiche annuaire.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Choisissez vos envies</h3><p>Explorez la carte de démonstration et ajoutez au panier ce qui vous tente (expérience fictive).</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Indiquez un créneau</h3><p>Pour l'exemple, un créneau de retrait est sélectionné ; la commande n'est pas transmise au restaurant.</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Récupérez sur place</h3><p>Paiement et remise des plats sont à convenir en direct avec l'établissement. Ce site ne gère pas de commande réelle.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">UNE DÉMO GOURMANDE</p>
+          <h2>Plaisir à partager.<br><em>Goûtez l'expérience Omar.</em></h2>
+          <p>Poursuivez votre découverte avec un dessert ou une boisson. Les produits présentés ici sont fictifs et illustrent le fonctionnement du Click & Collect.</p>
+          <a href="#carte" class="btn btn-gold">Explorer la carte (démonstration)<span>↗</span></a>
+        </div>
+        <span class="promo-monogram">O.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">ON VOUS ATTEND</p>
+        <h2>À bientôt chez <em>Omar.</em></h2>
+        <p class="sub">Pour savourer un couscous ou une grillade, rendez-vous à l’adresse confirmée.</p>
+        <div class="info-card"><span>⌖</span><div><b>Adresse</b><p>47 rue de Bretagne, 75003 Paris</p><small>Adresse vérifiée via PagesJaunes</small></div></div>
+        <div class="info-card"><span>◷</span><div><b>Horaires</b><p>Non vérifiés, merci de consulter les annuaires pour confirmation.</p></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact</b><p><a href="#" aria-disabled="true" tabindex="-1">Numéro à confirmer</a></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="#" aria-disabled="true" tabindex="-1">WhatsApp (non vérifié)</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=47%20rue%20de%20Bretagne,%2075003%20Paris" target="_blank" rel="noopener noreferrer">Voir sur Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>CHEZ OMAR</p>
+        <strong>PARIS</strong>
+        <span>47 rue de Bretagne</span>
+        <div class="location-line"></div>
+        <small>Restaurant emblématique du 3<sup>e</sup></small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">CHEZ OMAR <small>RESTAURANT</small></div>
+        <p>Couscous et convivialité depuis des années dans le Marais.<br>(Ce site est une démonstration prototype.)</p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Horaires</b>
+        <p>À confirmer</p>
+        <p>Merci de consulter les annuaires</p>
+        <p>47 rue de Bretagne, Paris 3e</p>
+      </div>
+      <div class="footer-last">
+        <b>Une question ?</b>
+        <a href="#" aria-disabled="true" tabindex="-1">Numéro non vérifié</a>
+        <a href="#" aria-disabled="true" tabindex="-1">WhatsApp (non vérifié)</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Chez Omar · Prototype de démonstration numérique. Données issues d’annuaires, non contractuelles.</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="#" aria-label="Contact WhatsApp (non vérifié)" aria-disabled="true" tabindex="-1">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true">
+    <div class="drawer-top">
+      <div>
+        <small>CLICK & COLLECT · DÉMO</small>
+        <h2>Votre panier <span id="drawer-count">(0)</span></h2>
+      </div>
+      <button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button>
+    </div>
+    <div id="drawer-content" class="drawer-content"></div>
+  </aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true">
+    <button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button>
+    <div id="modal-content"></div>
+  </div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true">
+    <button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button>
+    <div class="admin-heading">
+      <p class="kicker">CHEZ OMAR · ESPACE PRIVÉ</p>
+      <h2 id="admin-title">Espace restaurateur <em>démo</em></h2>
+      <p>Mode démonstration interactive. Ce tableau ne synchronise aucune donnée réelle et ne représente pas l'activité de Chez Omar.</p>
+      <p class="muted-small">Contact, horaires, carte et contacts WhatsApp non vérifiés. Aucune commande n’est transmise.</p>
+    </div>
+    <div id="admin-content"></div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
