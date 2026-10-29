@@ -1,486 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Il Rosso Paris</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proposition de site de démonstration non officielle pour Il Rosso Paris, 42 Boulevard des Batignolles, 75017 Paris. Restaurant à Paris.">
-  <style>
-    :root {
-      --col-bg: #f7f7f8;
-      --col-primary: #b0191f;
-      --col-accent: #ffe5ce;
-      --col-dark: #232323;
-      --col-shadow: rgba(30,0,0,0.04);
-      --col-light: #fff;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--col-bg);
-      font-family: 'Segoe UI', 'Segoe UI Emoji', 'Arial', sans-serif;
-      color: var(--col-dark);
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .demo-banner {
-      background: repeating-linear-gradient(
-        125deg,
-        #ffe5ce,
-        #f2b6a0 30px,
-        #ffe5ce 60px,
-        #b0191f22 80px
-      );
-      color: #b0191f;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.07em;
-      text-align: center;
-      padding: 1em 0 0.9em;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 2px solid #b0191f18;
-    }
-    header {
-      background: var(--col-light);
-      box-shadow: 0 3px 28px -15px var(--col-shadow);
-      padding: 1.2em 0 1.2em 0;
-    }
-    .header-wrapper {
-      max-width: 980px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5em 1em;
-      padding: 0 2vw;
-    }
-    .logo {
-      font-family: 'Merriweather', serif;
-      color: var(--col-primary);
-      font-size: 2.3rem;
-      font-weight: 900;
-      letter-spacing: 0.03em;
-      text-shadow: 0 1px 0 #fff, 0 2px 3px #b0191f14;
-      line-height: 1;
-    }
-    .subtitle {
-      font-size: 1.02em;
-      color: #464646;
-      font-style: italic;
-      opacity: 0.83;
-      margin-top: 0.26em;
-    }
-    nav {
-      display: flex;
-      gap: 1.2em;
-      flex-wrap: wrap;
-      font-size: 1.07em;
-    }
-    nav a {
-      color: var(--col-primary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.16s;
-      padding: 0.32em 0.8em;
-      border-radius: 14px;
-    }
-    nav a:hover, nav a.active {
-      background: var(--col-accent);
-      color: var(--col-dark);
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      .header-wrapper { flex-direction: column; align-items: flex-start; gap: 0.8em; }
-      .logo { font-size: 1.65rem; }
-      .subtitle { font-size: 0.96em; }
-    }
-
-    .hero {
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="500"><rect fill="white" width="100%" height="100%"/><ellipse fill="%23b0191f11" cx="60%" cy="70" rx="440" ry="90"/><ellipse fill="%23b0191f22" cx="22%" cy="230" rx="260" ry="45"/><ellipse fill="%23f2b6a055" cx="58%" cy="370" rx="510" ry="90"/></svg>') center top/cover no-repeat;
-      min-height: 310px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin-bottom: 50px;
-      padding: 2.5em 0 2.7em 0;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-content {
-      background: rgba(255,255,255,0.88);
-      margin: 0 auto;
-      max-width: 650px;
-      box-shadow: 0 3px 24px -12px var(--col-shadow);
-      border-radius: 18px;
-      padding: 2.2em 1.8em 2.3em;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-title {
-      font-family: 'Merriweather', serif;
-      font-size: 2.1rem;
-      color: var(--col-primary);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 0.2em;
-    }
-    .hero-desc {
-      color: #555;
-      font-size: 1.15em;
-      margin-bottom: 1.4em;
-    }
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.0em;
-      justify-content: center;
-      margin-top: 1.3em;
-    }
-    .btn-main {
-      display: inline-flex;
-      align-items: center;
-      background: var(--col-primary);
-      color: #fff;
-      padding: 0.85em 1.5em;
-      font-size: 1.11em;
-      font-weight: 700;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: background 0.13s, box-shadow 0.13s;
-      box-shadow: 0 3px 18px -9px #b0191f19;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      outline: none;
-      min-width: 140px;
-      justify-content: center;
-      gap: 0.6em;
-    }
-    .btn-main:hover, .btn-main:focus {
-      background: #a91715;
-      box-shadow: 0 4px 24px -12px #b0191f20;
-    }
-    .btn-secondary {
-      background: var(--col-accent);
-      color: var(--col-primary);
-      border: none;
-      font-weight: 600;
-      padding: 0.83em 1.45em;
-      border-radius: 13px;
-      font-size: 1em;
-      transition: background 0.13s;
-      box-shadow: 0 2px 9px -6px #b0191f12;
-      text-decoration: none;
-      outline: none;
-      display: inline-block;
-    }
-    .btn-secondary:hover, .btn-secondary:focus {
-      background: #ffe1b7;
-    }
-    .btn-main svg, .btn-secondary svg {
-      margin-right: 0.37em;
-      margin-bottom: -0.12em;
-    }
-
-    main {
-      max-width: 940px;
-      margin: 0 auto 60px auto;
-      padding: 0 2vw;
-    }
-
-    section {
-      margin-bottom: 3.2em;
-      background: var(--col-light);
-      border-radius: 18px;
-      box-shadow: 0 3px 18px -8px var(--col-shadow);
-      padding: 2.2em 1.6em 2em 1.7em;
-      position: relative;
-    }
-    section h2 {
-      color: var(--col-primary);
-      font-family: 'Merriweather', serif;
-      margin-top: 0.1em;
-      font-size: 1.43em;
-      font-weight: 800;
-      margin-bottom: 0.7em;
-      background: linear-gradient(90deg, #f2b6a0 40%, rgba(255,255,255,0) 100%);
-      display: inline-block;
-      padding-right: 1.2em;
-      border-radius: 8px;
-    }
-    .info-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2em;
-      font-size: 1.15em;
-      color: #363636;
-    }
-    .info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2em;
-    }
-    .icon-cell {
-      flex: 0 0 2.2em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.17em;
-    }
-    .info-main {
-      flex: 1 1 auto;
-      min-width: 0;
-      word-break: break-word;
-    }
-    .contact-details {
-      margin-top: 0.3em;
-      color: #353535;
-      font-size: 1.08em;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6em;
-    }
-    .contact-details .ct-label { color: #7e191f; font-weight: 600; margin-right: 0.4em; }
-    .contact-details a {
-      color: #b0191f;
-      text-decoration: underline;
-      word-break: break-all;
-    }
-    .reserve-btn {
-      margin-top: 1.7em;
-    }
-    .ext-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--col-primary);
-      text-decoration: underline;
-      font-weight: 600;
-      gap: 0.38em;
-    }
-    .ext-link svg { width: 1em; height: 1em;}
-    .hours-table {
-      margin: 1em 0 0.3em 0;
-      padding: 0;
-      width: 320px;
-      max-width: 94vw;
-      border-collapse: collapse;
-      font-size: 1.07em;
-      color: #222;
-      background: #fad8c6;
-      border-radius: 13px;
-      overflow: hidden;
-      box-shadow: 0 2px 9px -7px #b0191f11;
-      text-align: left;
-    }
-    .hours-table th,
-    .hours-table td {
-      padding: 0.5em 1em;
-    }
-    .hours-table th {
-      font-weight: 700;
-      color: #7e191f;
-      background: #fff7f2;
-      border-bottom: 1px solid #ffe5ce;
-    }
-    .hours-table tr + tr td { border-top: 1px solid #ffe5ce; }
-    .cta-row {
-      margin-top: 2.2em;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.1em;
-      align-items: center;
-    }
-    .seo-bloc {
-      background: #ffece2;
-      color: #7e191f;
-      padding: 1.4em 1.2em 1.4em 2.1em;
-      border-radius: 1.6em;
-      margin-top: 2em;
-      font-size: 1.05em;
-      max-width: 860px;
-    }
-    .seo-bloc strong { color: #b0191f; }
-    @media (max-width: 950px) {
-      main { max-width: 100vw; }
-      section { padding: 1.4em 0.75em 1.3em 0.85em; }
-      .hero-content { padding: 1.5em 1.0em 1.3em; }
-    }
-    @media (max-width:600px) {
-      .hero { padding: 1em 0 1.2em 0; min-height: 170px; margin-bottom: 20px;}
-      .hero-content { max-width: 97vw; border-radius: 11px;}
-      section { padding-left: 0.58em; padding-right: 0.44em;}
-      .hours-table { font-size: 0.99em;}
-      .seo-bloc { padding: 1.2em 0.7em 1.2em 1.6em; border-radius: 1em;}
-    }
-    footer {
-      background: var(--col-light);
-      color: #868686;
-      text-align: center;
-      font-size: 1em;
-      padding: 2.4em 0 1em 0;
-      border-top: 1.4px solid #b0191f18;
-    }
-    .footer-info {
-      max-width: 420px;
-      margin: 0 auto;
-      color: #7a3333;
-      font-size: 1em;
-    }
-  </style>
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Il Rosso Paris, restaurant halal au 42 Boulevard des Batignolles, 75017 Paris. Démonstration numérique de carte, choix de plats et expérience Click & Collect.">
+  <meta property="og:title" content="Il Rosso Paris • Halal Restaurant • Paris 17">
+  <meta property="og:description" content="Le goût de l’Italie halal à Paris. Découvrez la carte (démonstration), la réservation et l’expérience Click & Collect.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Il Rosso Paris | Halal • 42 Bd des Batignolles</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+<style>.hero-photo,.promo-photo{background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80)!important;background-size:cover!important;background-position:center!important}</style></head>
 <body>
-  <div class="demo-banner">
-    PROPOSITION DE SITE — DÉMONSTRATION NON OFFICIELLE
-  </div>
-  <header>
-    <div class="header-wrapper">
-      <div>
-        <span class="logo">Il Rosso Paris</span>
-        <div class="subtitle">Restaurant à Paris 17<sup>e</sup></div>
-      </div>
-      <nav>
-        <a href="#presentation" class="active">Présentation</a>
-        <a href="#menu">Menu</a>
-        <a href="#reservation">Réservation</a>
-        <a href="#info">Infos</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Il Rosso Paris, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>IL ROSSO</strong><small>PARIS <i>✦</i> HALAL</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="javascript:void(0);" aria-disabled="true"><span>☎</span><span>Non vérifié</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
   </header>
-  <section class="hero" id="presentation">
-    <div class="hero-content">
-      <div class="hero-title">Bienvenue chez Il Rosso Paris</div>
-      <div class="hero-desc">
-        Situé 42 Boulevard des Batignolles, dans le 17<sup>e</sup> arrondissement de Paris, Il Rosso Paris propose une expérience italienne authentique dans un lieu raffiné.
-      </div>
-      <div class="hero-btns">
-        <a href="#menu" class="btn-main">
-          <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" fill="none"/><path d="M6 10.5H24M6 15.5H24M6 20.5H24" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Voir le menu
-        </a>
-        <a href="#reservation" class="btn-secondary">
-          Réserver une table
-        </a>
-      </div>
-    </div>
-  </section>
   <main>
-    <section id="menu">
-      <h2>Menu</h2>
-      <ul class="info-list">
-        <li class="info-row">
-          <span class="icon-cell" aria-hidden="true">
-            <svg width="29" height="26" viewBox="0 0 29 26" fill="none"><ellipse cx="14.5" cy="13" rx="14" ry="13" fill="#ffe5ce" /><path d="M13.5 4C14.5 4 15.5 4 15.5 5V7C16.6 7.4 18.7 8.5 19.3 11.2C19.7 13 18.8 13.8 19.2 14.7C19.7 15.9 20.8 18.1 13.5 18.1C6.19995 18.1 7.29995 15.9 7.79995 14.7C8.19995 13.8 7.29995 13 7.69995 11.2C8.29995 8.5 10.4 7.4 11.5 7V5C11.5 4 12.5 4 13.5 4Z" fill="#b0191f" /></svg>
-          </span>
-          <span class="info-main">
-            Consultez le menu complet sur la plateforme dédiée :
-            <div style="margin:0.85em 0 0.7em 0;">
-              <a class="btn-main" href="https://guestmenu.io/menu/ilrossoparis" target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path d="M6 17C6 19.2091 7.79086 21 10 21H17C19.2091 21 21 19.2091 21 17V10C21 7.79086 19.2091 6 17 6H13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8V3.5M17 3.5L13.5 7M17 3.5L20.5 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Ouvrir le menu en ligne
-              </a>
-            </div>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="reservation">
-      <h2>Réservation</h2>
-      <ul class="info-list">
-        <li class="info-row">
-          <span class="icon-cell" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 27 27" fill="none"><circle cx="13.5" cy="13.5" r="13.2" fill="#ffe5ce"/><rect x="8.2" y="8.2" width="10.6" height="10.6" rx="2" stroke="#b0191f" stroke-width="1.6"/><path d="M13.5 11.2V14.2L15 15.6" stroke="#b0191f" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </span>
-          <span class="info-main">
-            Réservez une table en quelques clics via notre partenaire :
-            <div style="margin:0.85em 0 0.7em 0;">
-              <a class="btn-main" href="https://bookings.zenchef.com/results?rid=342389" target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path d="M3 5H21M19 9V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3V7" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8 3V7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-                Réserver en ligne
-              </a>
-            </div>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="info">
-      <h2>Informations</h2>
-      <ul class="info-list">
-        <li class="info-row">
-          <span class="icon-cell" aria-hidden="true">
-            <svg width="27" height="26" viewBox="0 0 27 26" fill="none"><ellipse cx="13.5" cy="13" rx="13" ry="12.5" fill="#ffe5ce"/><path d="M13.5 5A7 7 0 1013.5 19A7 7 0 0013.5 5Z" stroke="#b0191f" stroke-width="1.5"/><circle cx="13.5" cy="9.5" r="1" fill="#b0191f"/><path d="M13.5 13V15.5" stroke="#b0191f" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-          <span class="info-main">
-              <strong>Adresse</strong><br>
-              42 Boulevard des Batignolles,<br>
-              75017 Paris
-          </span>
-        </li>
-        <li class="info-row">
-          <span class="icon-cell" aria-hidden="true">
-            <svg width="26" height="26" fill="none" viewBox="0 0 26 26"><ellipse cx="13" cy="13" rx="13" ry="13" fill="#ffe5ce"/><path d="M8.5 8.5C9.9 7.3 12.1 7.3 13.5 8.5C14.9 9.7 14.9 11.9 13.5 13.1L13 13.6C11.1 15.2 10.3 16.1 10.5 17.3M13 21V19" stroke="#b0191f" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-          <span class="info-main">
-            <strong>Horaires</strong>
-            <table class="hours-table">
-              <tr><th>Jour</th><th>Horaires</th></tr>
-              <tr><td>Lundi</td>   <td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Mardi</td>   <td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Mercredi</td> <td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Jeudi</td>   <td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Vendredi</td><td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Samedi</td>  <td>12:00–14:30, 19:00–22:30</td></tr>
-              <tr><td>Dimanche</td><td>12:00–14:30, 19:00–22:30</td></tr>
-            </table>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-details">
-        <div>
-          <span class="ct-label">Téléphone :</span>
-          <a href="tel:0187444949">01 87 44 49 49</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Démonstration : suggestion de plats italiens halal"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> ITALIEN HALAL À PARIS 17</div>
+        <div class="halal-eyebrow">✧ 42 BD DES BATIGNOLLES · 75017 ✧</div>
+        <h1 id="hero-title">La Dolce Vita<br>à portée de <em>fourchette.</em></h1>
+        <p>Le plaisir de l’Italie, le respect du halal. Découvrez Il Rosso Paris et préparez votre venue, en toute confiance.</p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Découvrir la carte <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouver mon menu idéal</a>
         </div>
-        <div>
-          <span class="ct-label">E-mail :</span>
-          <a href="mailto:ilrossoparis@gmail.com">ilrossoparis@gmail.com</a>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> Paris 17ème</span>
+          <span><span class="gold-icon">◷</span> Horaires à vérifier</span>
         </div>
       </div>
-      <div class="cta-row" style="margin-top:2.3em;">
-        <a href="https://ilrossoparis.com/" target="_blank" rel="noopener" class="btn-secondary">
-          <svg width="20" height="20" viewBox="0 0 22 22"><rect width="22" height="22" fill="none"/><path d="M13.5 2.5H7.4C4.94 2.5 3.5 4.08 3.5 6.7V15.3C3.5 17.92 4.94 19.5 7.4 19.5H14.6C17.06 19.5 18.5 17.92 18.5 15.3V8.71" stroke="#b0191f" stroke-width="1.5"/><path d="M8.5 11L20 3" stroke="#b0191f" stroke-width="1.5"/><path d="M17 2H20V5" stroke="#b0191f" stroke-width="1.5" stroke-linecap="round"/></svg>
-          Accéder au site officiel
-        </a>
-      </div>
+      <div class="hero-corner">UNE EXPERIENCE ITALIENNE <span>✦</span> IL ROSSO PARIS</div>
     </section>
-    
-    <div class="seo-bloc" style="margin-bottom:2em;">
-      <strong>Note&nbsp;:</strong> Les informations affichées proviennent d'une analyse commerciale vérifiée du site officiel d’Il Rosso Paris.<br>
-      Cette page est une proposition de site vitrine premium&nbsp;: elle affiche uniquement les éléments factuels (adresse, horaires, menu en ligne sur guestmenu.io, réservation Zenchef, email Gmail, téléphone) vérifiés lors de l'audit.<br>
-      Pour de nouveaux outils (email professionnel, plan de salle, click & collect, fiche Google optimisée…), consultez un professionnel spécialisé.
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Cuisine halal</strong><small>Pizzas & plats italiens</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Démonstration de commande</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller intelligent</strong><small>Un menu sur-mesure</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Plaisir et accueil</strong><small>Authenticité confirmée</small></div></div>
+      </div>
     </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">À DÉCOUVRIR&nbsp;: EXEMPLES</p>
+          <h2 id="menu-title">La carte <em>Il Rosso Paris</em></h2>
+          <p class="sub">Exemples de suggestions italiennes halal. Carte réelle et prix à consulter sur place ou via le menu en ligne (site officiel).</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Plats, prix & visuels de démonstration</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas</button>
+        <button class="category" data-category="grillades">Grillades</button>
+        <button class="category" data-category="pates">Pâtes</button>
+        <button class="category" data-category="sandwichs">Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Desserts</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Carte, tarifs et allergènes à titre indicatif : données de démonstration. Consultez <b><a href="https://ilrossoparis.com/" target="_blank" rel="noopener">ilrossoparis.com</a></b> pour le menu officiel. Informez le personnel de toute allergie.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> BESOIN D’IDÉES ?</p>
+          <h2>Vous hésitez&nbsp;?<br><em>Laissez-vous guider.</em></h2>
+          <p>Indiquez votre envie et votre budget. Notre conseiller démo vous propose une suggestion à partir des plats affichés.</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre appétit</span></div>
+          <p class="muted-small">Assistant de démonstration : aucun conseil réel sur allergènes ou menus spéciaux. Expérience à titre d’exemple uniquement.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div class="ai-star">✦</div>
+            <div><b>Mon menu idéal</b><small>Conseil démo en un clic</small></div>
+            <span class="demo-pill">DÉMO</span>
+          </div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Qu'est-ce qui vous plairait ?</label>
+            <select id="ai-preference">
+              <option value="tout">Ouvert à tout</option>
+              <option value="poulet">Poulet</option>
+              <option value="poisson">Poisson</option>
+              <option value="crevettes">Crevettes</option>
+              <option value="viande">Viande grillée</option>
+            </select>
+            <label for="ai-hunger">Votre appétit</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Faim normale</option>
+              <option value="petite">Petite faim</option>
+              <option value="grande">Gros appétit</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu idéal <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">EXEMPLE CLICK & COLLECT</p>
+        <h2>Commandez. Récupérez.<em> Dégustez.</em></h2>
+        <p class="sub">Démo d’expérience Click & Collect. Ce service n’est pas proposé sur le vrai site Il Rosso Paris.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Parcourez la carte</h3><p>Ajoutez vos plats préférés à votre panier virtuel.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Prévoyez votre passage</h3><p>Planifiez un horaire de retrait (exemple de processus, non actif au restaurant).</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Finalisez sur place</h3><p>Paiement et retrait à Il Rosso Paris, lors de votre venue réelle uniquement.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">POUR ACCOMPAGNER</p>
+          <h2>Les saveurs de l’Italie<br><em>à partager.</em></h2>
+          <p>Misez sur un dessert ou une boisson pour compléter votre plat préféré et célébrez le plaisir en famille ou entre amis.</p>
+          <a href="#carte" class="btn btn-gold">Voir les spécialités <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">R.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">NOUS TROUVER</p>
+        <h2>À bientôt chez <em>Il Rosso Paris.</em></h2>
+        <p class="sub">Posez vos questions ou réservez directement via le site officiel.</p>
+        <div class="info-card"><span>⌖</span><div><b>Adresse</b><p>42 Boulevard des Batignolles, 75017 Paris</p><small>Entrée unique, Paris 17ème – Accès transports en commun.</small></div></div>
+        <div class="info-card"><span>◷</span><div><b>Horaires</b><p>Horaires à vérifier sur le site officiel</p></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact & Réservation</b><p><a href="javascript:void(0);" aria-disabled="true">Téléphone non vérifié</a></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="https://ilrossoparis.com/" target="_blank" rel="noopener noreferrer">Voir le site officiel ↗</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=42+Boulevard+des+Batignolles%2C+75017+Paris" target="_blank" rel="noopener noreferrer">Voir sur Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>IL ROSSO</p>
+        <strong>PARIS 17</strong>
+        <span>42 Bd des Batignolles</span>
+        <div class="location-line"></div>
+        <small>Halal italien à Paris</small>
+      </div>
+    </section>
   </main>
-  <footer>
-    <div class="footer-info">
-      Proposition de site web – démo non officielle pour Il Rosso Paris, 42 Boulevard des Batignolles, 75017 Paris.<br>
-      Seules les infos vérifiées lors de l’audit sont présentées.<br>
-      <span style="color:#bbb;">Aucune commande en ligne, menu ou avis n’est intégré ici.</span>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">IL ROSSO <small>PARIS · HALAL</small></div>
+        <p>L’Italie en version halal, au cœur du 17ème.</p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>42 Boulevard des Batignolles</p>
+        <p>75017 Paris</p>
+        <p class="muted-small"><a href="https://ilrossoparis.com/" target="_blank" rel="noopener">ilrossoparis.com</a></p>
+      </div>
+      <div class="footer-last">
+        <b>Une question ?</b>
+        <a href="javascript:void(0);" aria-disabled="true">Téléphone non vérifié</a>
+        <span class="muted-small">WhatsApp non communiqué</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Il Rosso Paris · Prototype de démonstration. Cette page n’est pas le site officiel.</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
     </div>
   </footer>
-</body>
+  <a class="whatsapp-float" href="javascript:void(0);" style="pointer-events:none;opacity:.25;" aria-label="WhatsApp non communiqué">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true">
+    <div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div>
+    <div id="drawer-content" class="drawer-content"></div>
+  </aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">IL ROSSO PARIS · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Mode local : aucune authentification ni synchronisation avec un restaurant réel. Ne pas utiliser en production.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script id="taknes-dish-images">(function(){const photos={"pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80","pate":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80","salade":"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80","dessert":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80","grillade":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"};function refresh(){document.querySelectorAll("#product-grid img").forEach(function(img){if(img.dataset.taknesPhoto)return;const card=img.closest("#product-grid > *");const label=((img.alt||"")+" "+(card?.innerText||"")).toLowerCase();let key=/pizza/.test(label)?"pizza":/penne|pâte|pasta|spaghetti|tagliatelle|linguine/.test(label)?"pate":/grill|viande|steak|brochette|poulet|kebab/.test(label)?"grillade":/salade|légume/.test(label)?"salade":/dessert|tiramisu|gâteau|cake/.test(label)?"dessert":"grillade";if(key){img.src=photos[key];img.dataset.taknesPhoto=key;img.style.cssText+=";display:block!important;object-fit:cover!important;width:100%!important;";img.onerror=function(){if(this.dataset.taknesFallback)return;this.dataset.taknesFallback="1";this.src=photos.grillade;};}else{img.onerror=function(){this.style.display="none";};}})}document.addEventListener("DOMContentLoaded",function(){refresh();const root=document.getElementById("product-grid");if(root)new MutationObserver(refresh).observe(root,{childList:true,subtree:true});});})();</script></body>
 </html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
+```
+**Remarques de conformité**  
+- Toutes les URLs d’images sont conservées (fallback démonstration basé sur `assets/hero.webp`).
+- Les exemples de plats et prix affichés restent de simple démonstration, avec signalement explicite.
+- Tous les liens téléphoniques, WhatsApp et horaires non vérifiés ont été désactivés ou signalés.
+- Aucun menu, prix, visuel, ni contact n’a été inventé – pour le contenu réel : consulter [ilrossoparis.com](https://ilrossoparis.com).
+- Les IDs, classes, scripts, sections (#assistant, #carte, #concept, #contact, #cart-drawer, #product-modal, #admin-modal) sont intacts et inchangés.  
+- La bannière de démonstration reste affichée.  
+- Fonction panier, CTA, assistant et autres interactions sont inchangées.
