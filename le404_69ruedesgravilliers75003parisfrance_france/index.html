@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Le 404, cuisine du monde à Paris (75003). Découvrez notre carte en ligne (exemples de plats), Click & Collect en démonstration. Prototype pour système de commande en ligne.">
+  <meta property="og:title" content="Le 404 • Restaurant Paris 3e">
+  <meta property="og:description" content="Le 404, Paris 3 : prototype de carte interactive et Click & Collect (démonstration). Les commandes ne sont pas transmises au restaurant.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Le 404 | Restaurant Paris 3e – Prototype Click & Collect</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+<style>.hero-photo,.promo-photo{background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80)!important;background-size:cover!important;background-position:center!important}</style></head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Le 404, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>LE 404</strong><small>RESTAURANT <i>✦</i> PARIS 3<sup>e</sup></small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="#" tabindex="-1" aria-disabled="true"><span>☎</span><span>(numéro non interactif)</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Visuel de démonstration - plat signature du restaurant"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> RESTAURANT À PARIS 3<sup>e</sup></div>
+        <div class="halal-eyebrow">✧ CUISINE DU MONDE · PARIS ✧</div>
+        <h1 id="hero-title">L'expérience <em>Le 404</em><br>à deux pas du Marais.</h1>
+        <p>Un écrin chaleureux, une ambiance unique et une carte de spécialités du monde. Ceci est un prototype de Click & Collect pour Le 404.</p>
+        <div class="hero-ctas"><a href="#carte" class="btn btn-gold">Voir la carte (démonstration) <span>↗</span></a><a href="#assistant" class="btn btn-outline">✦ Conseiller menu (démo)</a></div>
+        <div class="hero-metadata"><span><span class="gold-icon">♢</span> 69 rue des Gravilliers, 75003 Paris</span><span><span class="gold-icon">◷</span> Horaires à vérifier</span></div>
+      </div>
+      <div class="hero-corner">PROTOTYPE CLICK & COLLECT <span>✦</span> LE 404</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Cuisine du monde</strong><small>Ambiance orientale, saveurs à découvrir</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Commande démo, non active</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller intelligent</strong><small>Menu suggéré par l’assistant</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Prototype uniquement</strong><small>Aucune commande transmise au restaurant</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">APERÇU DE LA CARTE (DÉMONSTRATION)</p>
+          <h2 id="menu-title">La carte <em>Le 404</em></h2>
+          <p class="sub">Exemples de plats proposés (visuels et prix de démonstration, non contractuels).</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Prix et plats affichés à titre d’exemple pour cette démo</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas</button>
+        <button class="category" data-category="grillades">Grillades</button>
+        <button class="category" data-category="pates">Pâtes</button>
+        <button class="category" data-category="sandwichs">Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Desserts</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Les exemples de plats et allergènes sont de démonstration : se référer à la carte officielle sur <a href="https://404-resto.com/" rel="noopener" target="_blank">le site du 404</a>. Pour toute allergie, contactez le restaurant.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> CONSEILLER DE DÉMONSTRATION</p>
+          <h2>Vous hésitez ?<br><em>Simulez votre menu idéal</em></h2>
+          <p>Une suggestion interactive, basée sur la carte de démonstration (le système ne remplace pas le conseil d'équipe du 404).</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre faim</span></div>
+          <p class="muted-small">Démonstration sans lien avec la carte réelle du 404. Ne pas utiliser pour des besoins alimentaires réels.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div class="ai-star">✦</div>
+            <div><b>Mon menu de démonstration</b><small>Suggestion instantanée</small></div>
+            <span class="demo-pill">DÉMO</span>
+          </div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Qu'est-ce qui vous ferait plaisir ?</label>
+            <select id="ai-preference"><option value="tout">Je suis ouvert à tout</option><option value="poulet">Poulet</option><option value="poisson">Thon / poisson</option><option value="crevettes">Crevettes</option><option value="viande">Viande grillée</option></select>
+            <label for="ai-hunger">Votre niveau de faim ?</label>
+            <select id="ai-hunger"><option value="moyenne">Une faim normale</option><option value="petite">Une petite faim</option><option value="grande">Une grosse faim</option></select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu démo <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">EXEMPLE DE PARCOURS</p>
+        <h2>Commandez. Récupérez. <em>Testez l’expérience.</em></h2>
+        <p class="sub">Prototype Click & Collect : ajoutez des plats au panier, validez votre commande (aucune transmission réelle).</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Composez votre panier</h3><p>Sélectionnez des exemples de plats et ajoutez-les à votre panier virtuel.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Validation fictive</h3><p>Simulez le choix d’un créneau de retrait (aucune commande n’est envoyée à l’équipe).</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Prototype uniquement</h3><p>Ce site est un test technique. Pour réserver, rendez-vous sur <a href="https://404-resto.com/reservations" target="_blank" rel="noopener">le site du 404</a>.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">PETITE FAIM OU GRAND PLAISIR ?</p>
+          <h2>Testez la carte démo.<br><em>Le partage avant tout.</em></h2>
+          <p>Associez un dessert ou une boisson à votre plat préféré pour simuler une commande complète.</p>
+          <a href="#carte" class="btn btn-gold">Voir les spécialités démo <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">404</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">POUR CONTACTER LE 404</p>
+        <h2>Bienvenue chez <em>Le 404</em></h2>
+        <p class="sub">Le 404 vous accueille au cœur du Marais, à Paris 3<sup>e</sup>.</p>
+        <div class="info-card"><span>⌖</span><div><b>Adresse</b><p>69 rue des Gravilliers, 75003 Paris, France</p><small>Retrouvez la carte officielle sur <a href="https://404-resto.com/" rel="noopener" target="_blank">404-resto.com</a></small></div></div>
+        <div class="info-card"><span>◷</span><div><b>Horaires</b><p>Horaires à vérifier sur le site officiel</p></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact</b><p><span>À consulter sur <a href="https://404-resto.com/" rel="noopener" target="_blank">404-resto.com</a></span></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="https://404-resto.com/contact" target="_blank" rel="noopener noreferrer">Accéder au formulaire de contact ↗</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=69%20rue%20des%20Gravilliers%20Paris" target="_blank" rel="noopener noreferrer">Plan Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>LE 404</p>
+        <strong>PARIS 3<sup>e</sup></strong>
+        <span>69 rue des Gravilliers</span>
+        <div class="location-line"></div>
+        <small>Prototype – aucune vente réelle</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LE 404 <small>RESTAURANT · PARIS 3<sup>e</sup></small></div>
+        <p>Exemple de carte et de Click & Collect en prototype.</p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Horaires</b>
+        <p>Se référer à 404-resto.com</p>
+        <p>69 rue des Gravilliers</p>
+        <p>75003 Paris</p>
+      </div>
+      <div class="footer-last">
+        <b>En savoir plus</b>
+        <a href="https://404-resto.com/" target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+        <span class="muted-small">Commande démo uniquement</span>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Le 404 · Prototype Click & Collect (aucune commande transmise). Démonstration technique.</span><button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button></div>
+  </footer>
+  <a class="whatsapp-float" href="#" tabindex="-1" aria-disabled="true" aria-label="Contact WhatsApp désactivé">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">LE 404 · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Mode local : aucune authentification ni synchronisation avec le restaurant. Prototype technique.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script id="taknes-dish-images">(function(){const photos={"pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80","pate":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80","salade":"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80","dessert":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80","grillade":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"};function refresh(){document.querySelectorAll("#product-grid img").forEach(function(img){if(img.dataset.taknesPhoto)return;const card=img.closest("#product-grid > *");const label=((img.alt||"")+" "+(card?.innerText||"")).toLowerCase();let key=/pizza/.test(label)?"pizza":/penne|pâte|pasta|spaghetti|tagliatelle|linguine/.test(label)?"pate":/grill|viande|steak|brochette|poulet|kebab/.test(label)?"grillade":/salade|légume/.test(label)?"salade":/dessert|tiramisu|gâteau|cake/.test(label)?"dessert":"grillade";if(key){img.src=photos[key];img.dataset.taknesPhoto=key;img.style.cssText+=";display:block!important;object-fit:cover!important;width:100%!important;";img.onerror=function(){if(this.dataset.taknesFallback)return;this.dataset.taknesFallback="1";this.src=photos.grillade;};}else{img.onerror=function(){this.style.display="none";};}})}document.addEventListener("DOMContentLoaded",function(){refresh();const root=document.getElementById("product-grid");if(root)new MutationObserver(refresh).observe(root,{childList:true,subtree:true});});})();</script></body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
+```
+**Remarques** :  
+- Tous les éléments HTML, IDs, classes, data-attribute, sections, boutons, composants JS et structure du template sont intégralement conservés.  
+- Toutes les informations de contact, liens WhatsApp et téléphone sont désactivés là où non vérifiés et dirigés vers le site officiel le404-resto.com.  
+- Les images et prix de démonstration du modèle sont conservés, chaque mention "carte", plats, prix signalés comme exemples/démo.  
+- La démonstration Click & Collect et l’assistant menu sont marqués prototypes, sans valeur contractuelle ni connexion réelle au restaurant Le 404.  
+- Les boutons, le panier, le conseiller, la section admin et tous les IDs/fichiers attendus sont préservés pour un fonctionnement JavaScript inchangé.
