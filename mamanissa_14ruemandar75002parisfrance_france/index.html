@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Mama Nissa, restaurant algérien et méditerranéen à Paris 2ᵉ (14 rue Mandar). Démonstration de commande Click & Collect. Les menus, prix et allergènes sont affichés à titre d’exemple.">
+  <meta property="og:title" content="Mama Nissa • Restaurant Paris 2e">
+  <meta property="og:description" content="Cuisine algérienne méditerranéenne à Paris. Retrait de commande en boutique (Click & Collect). Site de démonstration : commandes non transmises.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Mama Nissa | Restaurant algérien • Paris 2e</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Mama Nissa, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>MAMA NISSA</strong><small>RESTAURANT</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="#" tabindex="-1" aria-disabled="true"><span>☎</span><span>Non vérifié</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Assiette méditerranéenne de démonstration"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> SAVEURS ALGÉRIENNES & MÉDITERRANÉENNES À PARIS 2e</div>
+        <div class="halal-eyebrow">✧ À EMPORTER ET LIVRAISON DISPONIBLES ✧</div>
+        <h1 id="hero-title">Voyagez au cœur de la <em>gourmandise.</em></h1>
+        <p>Plats méditerranéens, recettes algériennes et accueil chaleureux à Paris. Bienvenue chez Mama Nissa, restaurant familial de démonstration.</p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Découvrir notre carte <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouve ton menu avec l'outil IA</a>
+        </div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 14 rue Mandar, 75002 Paris</span>
+          <span><span class="gold-icon">◷</span> Horaires à confirmer</span>
+        </div>
+      </div>
+      <div class="hero-corner">EXEMPLE DE RESTAURANT <span>✦</span> MAMA NISSA</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Cuisine algérienne & méditerranéenne</strong><small>Recettes et accueil maison (exemple)</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Commandez, puis récupérez (service signalé)</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller intelligent</strong><small>Un menu selon vos envies</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Démo non contractuelle</strong><small>Les commandes ne sont pas transmises</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">EXEMPLE DE MENU</p>
+          <h2 id="menu-title">La carte <em>Mama Nissa</em></h2>
+          <p class="sub">Découvrez les spécialités d’Algérie & Méditerranée (plats et prix affichés à titre de démonstration uniquement).</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tarifs indicatifs et exemples de plats – non contractuels</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Exemple : Pizzas</button>
+        <button class="category" data-category="grillades">Exemple : Grillades</button>
+        <button class="category" data-category="pates">Exemple : Pâtes</button>
+        <button class="category" data-category="sandwichs">Exemple : Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Exemple : Desserts</button>
+        <button class="category" data-category="boissons">Exemple : Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Les informations ingrédients et allergènes doivent être validées par Mama Nissa avant toute commande. Exemples de plats pour la démonstration, non garantis fidèles à la carte réelle.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> TESTEZ NOTRE ASSISTANT</p>
+          <h2>En manque d’inspiration ?<br><em>Faites-vous conseiller !</em></h2>
+          <p>Décrivez votre faim et votre budget : l’assistant vous suggère des exemples de menus parmi les spécialités proposées à titre de démonstration.</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre faim</span></div>
+          <p class="muted-small">Conseiller imaginé pour la démo ; il ne remplace pas le conseil d’un professionnel ni la consultation directe du restaurant.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div class="ai-star">✦</div>
+            <div><b>Menu conseillé (démonstration)</b><small>Suggestions aléatoires</small></div>
+            <span class="demo-pill">DÉMO</span>
+          </div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Qu'est-ce qui vous ferait plaisir ?</label>
+            <select id="ai-preference">
+              <option value="tout">Je suis ouvert à tout</option>
+              <option value="poulet">Poulet</option>
+              <option value="poisson">Thon / poisson</option>
+              <option value="crevettes">Crevettes</option>
+              <option value="viande">Viande grillée</option>
+            </select>
+            <label for="ai-hunger">Votre niveau de faim ?</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Une faim normale</option>
+              <option value="petite">Une petite faim</option>
+              <option value="grande">Une grosse faim</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu idéal <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">CLICK & COLLECT (DÉMONSTRATION)</p>
+        <h2>Commandez. Récupérez.<em>Testez l’expérience.</em></h2>
+        <p class="sub">Retrait de commande sur place proposé selon la fiche officielle. Tous les parcours sont simulés ici.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Ajoutez des plats</h3><p>Navigation sur la carte d’exemple et sélection au panier (simulation).</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Choisissez un horaire</h3><p>Créneau de retrait à définir (cette étape est fictive dans cette démo).</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Récupérez sur place</h3><p>Click & Collect signalé comme disponible – procédure réelle à valider et tester.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">EXEMPLE : ACCOMPAGNEZ VOTRE REPAS</p>
+          <h2>Un plaisir convivial.<br><em>Une cuisine authentique.</em></h2>
+          <p>Composez votre formule : boissons et desserts présentés ici uniquement à titre indicatif — contactez le restaurant Mama Nissa pour l’offre réelle.</p>
+          <a href="#carte" class="btn btn-gold">Voir les spécialités (exemple) <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">M.N.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">RETROUVEZ-NOUS</p>
+        <h2>À bientôt chez <em>Mama Nissa</em></h2>
+        <p class="sub">Venez savourer nos recettes familiales à Paris, dans le 2ᵉ arrondissement.</p>
+        <div class="info-card"><span>⌖</span><div><b>Adresse</b><p>14 rue Mandar, 75002 Paris, France</p><small>Contactez-nous avant votre visite (coordonnées à valider).</small></div></div>
+        <div class="info-card"><span>◷</span><div><b>Horaires</b><p>Horaires d’ouverture non vérifiés</p></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact & WhatsApp</b><p><span aria-disabled="true">Numéros non vérifiés</span></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="#" tabindex="-1" aria-disabled="true" title="Coordonnée WhatsApp non active">WhatsApp (non vérifié)</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=14+rue+Mandar+75002+Paris" target="_blank" rel="noopener noreferrer">Voir l’adresse sur Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>MAMA NISSA</p>
+        <strong>14 RUE MANDAR</strong>
+        <span>75002 PARIS · FRANCE</span>
+        <div class="location-line"></div>
+        <small>Adresse vérifiée via Audentia · open data</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">MAMA NISSA <small>RESTAURANT ALGERIEN · PARIS</small></div>
+        <p>Spécialités méditerranéennes, vente à emporter et livraison. Site de démonstration : informations à valider auprès du restaurant.</p>
+      </div>
+      <div>
+        <b>Parcourir</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Horaires</b>
+        <p>Non vérifiés</p>
+        <p>Merci de consulter Mama Nissa avant votre visite.</p>
+        <p>14 rue Mandar, 75002 Paris</p>
+      </div>
+      <div class="footer-last">
+        <b>Une question ?</b>
+        <span aria-disabled="true">Téléphone non vérifié</span>
+        <span aria-disabled="true">WhatsApp non vérifié</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Mama Nissa · Prototype de démonstration (aucune commande transmise).</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="#" tabindex="-1" aria-disabled="true" aria-label="WhatsApp non vérifié">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">MAMA NISSA · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>simulation</em></h2><p>Mode démonstration : aucune authentification ni synchronisation avec le restaurant réel. Usage non contractuel.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
