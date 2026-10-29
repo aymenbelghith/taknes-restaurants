@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Le Petit Gourmet, restaurant à Paris 9e. Découvrez notre carte complète et nos prix de démonstration : entrées, plats, desserts et boissons. Prototype de menu Click & Collect, commandes non transmises.">
+  <meta property="og:title" content="Le Petit Gourmet • Paris 9e">
+  <meta property="og:description" content="Le Petit Gourmet, cuisine faite maison à Paris 9ème. Carte variée, prix indicatifs et démo de commande.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Le Petit Gourmet | Restaurant Paris 9e – Carte & Démo Click & Collect</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+<style>.hero-photo,.promo-photo{background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80)!important;background-size:cover!important;background-position:center!important}</style></head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Le Petit Gourmet, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>LE PETIT GOURMET</strong><small>RESTAURANT · PARIS 9e</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions">
+        <a class="phone-link" href="tel:+33183971934"><span>☎</span><span>01 83 97 19 34</span></a>
+        <button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Cuisine traditionnelle maison à Paris 9"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> LE GOÛT DE LA MAISON AU CŒUR DE PARIS</div>
+        <div class="halal-eyebrow">✧ FAIT MAISON · 9e ARRONDISSEMENT ✧</div>
+        <h1 id="hero-title">La tradition<br>avec une <em>touche gourmande.</em></h1>
+        <p>Des recettes de bistrot revisitées, des produits frais, et toute la convivialité d’une table à Paris 9e. Découvrez Le Petit Gourmet.</p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Découvrir notre carte <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouve ton menu avec l’IA</a>
+        </div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 39 rue du Faubourg Montmartre, Paris 9</span>
+          <span><span class="gold-icon">◷</span> Horaires à confirmer</span>
+        </div>
+      </div>
+      <div class="hero-corner">UNE EXPÉRIENCE GOURMANDE <span>✦</span> LE PETIT GOURMET</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Fait maison</strong><small>Des recettes authentiques et savoureuses</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Simulation de commande rapide</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller menu</strong><small>Des suggestions selon vos envies</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>L’esprit bistrot</strong><small>Accueil chaleureux et générosité</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">DÉCOUVREZ NOS SPÉCIALITÉS</p>
+          <h2 id="menu-title">La carte <em>Le Petit Gourmet</em></h2>
+          <p class="sub">Entrées, plats, desserts et boissons : prix et plats de démonstration.</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tarifs et photos à titre d’exemple pour cette démonstration</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Entrées</button>
+        <button class="category" data-category="grillades">Plats</button>
+        <button class="category" data-category="pates">Desserts</button>
+        <button class="category" data-category="sandwichs">Suggestions</button>
+        <button class="category" data-category="desserts">Fromages</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Les plats, prix, photos et allergènes suivants sont issus d’une carte de démonstration, non contractuelle&nbsp;: ils ne reflètent pas nécessairement l’offre actuelle de <b>Le Petit Gourmet</b>. Merci de consulter le site officiel (<a href="https://www.lepetitgourmet-paris.fr/fr/menu/" target="_blank" rel="noopener">lepetitgourmet-paris.fr</a>) ou d’interroger le personnel pour toute question sur la carte réelle ou les allergènes.</p>
+    </section>
+    <section class="ai-section" id="assistant"><div class="container ai-layout">
+      <div class="ai-copy">
+        <p class="kicker"><span>✦</span> UN MENU PERSONNALISÉ EN DÉMO</p>
+        <h2>Vous hésitez ?<br><em>On choisit ensemble.</em></h2>
+        <p>Essayez notre conseiller démo&nbsp;: un menu suggéré à partir des produits affichés ci-dessus.</p>
+        <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre faim</span></div>
+        <p class="muted-small">Conseiller de démonstration basé sur des exemples de plats et prix du modèle. Ne remplace pas la consultation du restaurant officiel ni les conseils sur les allergènes.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-head">
+          <div class="ai-star">✦</div>
+          <div><b>Mon menu idéal</b><small>En un clin d’œil</small></div>
+          <span class="demo-pill">DÉMO</span>
+        </div>
+        <div class="ai-inputs">
+          <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20&nbsp;€</strong></label>
+          <input type="range" id="ai-budget" min="8" max="40" step="1" value="20">
+          <div class="range-labels"><span>8&nbsp;€</span><span>40&nbsp;€</span></div>
+          <label for="ai-preference">Qu’est-ce qui vous ferait plaisir ?</label>
+          <select id="ai-preference">
+            <option value="tout">Je suis ouvert à tout</option>
+            <option value="poulet">Viande blanche</option>
+            <option value="poisson">Poisson</option>
+            <option value="crevettes">Mer</option>
+            <option value="viande">Viande rouge</option>
+          </select>
+          <label for="ai-hunger">Votre niveau de faim ?</label>
+          <select id="ai-hunger">
+            <option value="moyenne">Une faim classique</option>
+            <option value="petite">Une petite faim</option>
+            <option value="grande">Une faim de gourmet</option>
+          </select>
+          <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu idéal <span>↗</span></button>
+          <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </div></section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">DÉMONSTRATION CLICK & COLLECT</p>
+        <h2>Simulez. Récupérez. <em>Savourez.</em></h2>
+        <p class="sub">Exemple de parcours Click & Collect&nbsp;: sélectionnez, simulez… <b>mais aucune commande n’est transmise au restaurant.</b></p>
+      </div>
+      <div class="journey-grid">
+        <article>
+          <span class="step-num">01</span>
+          <span class="journey-symbol">♧</span>
+          <h3>Faites votre sélection</h3>
+          <p>Ajoutez des plats de la carte de démonstration dans votre panier.</p>
+        </article>
+        <article>
+          <span class="step-num">02</span>
+          <span class="journey-symbol">◷</span>
+          <h3>Choisissez un créneau</h3>
+          <p>Simulez votre moment de retrait&nbsp;: la réservation n’est pas transmise.</p>
+        </article>
+        <article>
+          <span class="step-num">03</span>
+          <span class="journey-symbol">✧</span>
+          <h3>Récupérez sur place</h3>
+          <p>Exemple de processus. Merci de bien valider toute commande auprès du <b>Petit Gourmet</b> par téléphone ou sur le site officiel.</p>
+        </article>
+      </div>
+    </section>
+    <section class="promo container"><div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">POUR TOUS LES GOÛTS</p>
+          <h2>Composez votre repas.<br><em>Testez la démo.</em></h2>
+          <p>Tous les plats et prix sont des exemples&nbsp;: consultez la carte officielle pour l’offre réelle.</p>
+          <a href="#carte" class="btn btn-gold">Voir la carte démo <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">LPG.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">VENEZ NOUS VOIR</p>
+        <h2>À bientôt chez <em>Le Petit Gourmet.</em></h2>
+        <p class="sub">Retrouvez-nous au cœur du 9e arrondissement de Paris.</p>
+        <div class="info-card"><span>⌖</span>
+          <div>
+            <b>Notre adresse</b>
+            <p>39 Rue du Faubourg Montmartre, 75009 Paris</p>
+            <small>Accès métro, bus et parkings à proximité.</small>
+          </div>
+        </div>
+        <div class="info-card"><span>◷</span>
+          <div>
+            <b>Horaires</b>
+            <p>Voir sur le site <a href="https://www.lepetitgourmet-paris.fr/fr/" target="_blank" rel="noopener">officiel</a></p>
+          </div>
+        </div>
+        <div class="info-card"><span>☎</span>
+          <div>
+            <b>Contact</b>
+            <p><a href="mailto:lepetitgourmetparis@gmail.com">lepetitgourmetparis@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="mailto:lepetitgourmetparis@gmail.com">Envoyer un e-mail ↗</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=39+Rue+du+Faubourg+Montmartre%2C+75009+Paris" target="_blank" rel="noopener noreferrer">Voir le plan ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>LE PETIT GOURMET</p>
+        <strong>PARIS 9e</strong>
+        <span>39 Rue du Faubourg Montmartre</span>
+        <div class="location-line"></div>
+        <small>Cuisine maison et accueil chaleureux</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LE PETIT GOURMET <small>RESTAURANT · PARIS 9e</small></div>
+        <p>La tradition et la générosité d’une belle table parisienne.</p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>39 Rue du Faubourg Montmartre</p>
+        <p>75009 Paris</p>
+      </div>
+      <div class="footer-last">
+        <b>Une question&nbsp;?</b>
+        <a href="mailto:lepetitgourmetparis@gmail.com">Par e-mail</a>
+        <a href="https://www.lepetitgourmet-paris.fr/fr/contact/" target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Le Petit Gourmet · Prototype démo (aucune commande réelle, voir lepetitgourmet-paris.fr).</span><button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button></div>
+  </footer>
+  <a class="whatsapp-float" href="#" aria-label="WhatsApp désactivé" style="pointer-events:none;opacity:.5;" tabindex="-1">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true">
+    <div class="drawer-top">
+      <div>
+        <small>CLICK & COLLECT · DÉMO</small>
+        <h2>Votre panier <span id="drawer-count">(0)</span></h2>
+      </div>
+      <button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button>
+    </div>
+    <div id="drawer-content" class="drawer-content"></div>
+  </aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true">
+    <button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button>
+    <div id="modal-content"></div>
+  </div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true">
+    <button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button>
+    <div class="admin-heading">
+      <p class="kicker">LE PETIT GOURMET · ESPACE PRIVÉ</p>
+      <h2 id="admin-title">Tableau restaurateur <em>démo</em></h2>
+      <p>Mode local&nbsp;: aucune authentification ni synchronisation réelle avec Le Petit Gourmet. Illustration commerciale sans engagement ni affichage en ligne.</p>
+    </div>
+    <div id="admin-content"></div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
