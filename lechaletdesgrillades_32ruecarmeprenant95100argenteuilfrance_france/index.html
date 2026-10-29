@@ -1,0 +1,229 @@
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Le Chalet Des Grillades à Argenteuil (95100) : restaurant halal convivial. Carte de démonstration, grillades, pizzas, sandwichs, click & collect en prototype. Commande non transmise.">
+  <meta property="og:title" content="Le Chalet Des Grillades • Argenteuil">
+  <meta property="og:description" content="Grillades et cuisine halal à Argenteuil. Prototype de menu en démonstration, aucun système de commande réel.">
+  <meta property="og:image" content="assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/hero.webp">
+  <title>Le Chalet Des Grillades | Halal • Argenteuil 95100 (Démo)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant réel</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Le Chalet Des Grillades, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>LE CHALET DES GRILLADES</strong><small>RESTAURANT <i>✦</i> HALAL</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="phone-link" href="#"><span>☎</span><span>–</span></a><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Assiette grillades du Chalet Des Grillades (photo de démonstration)"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> LE GOÛT DES GRILLADES À ARGENTEUIL</div>
+        <div class="halal-eyebrow">✧ CUISINE HALAL · 95100 ✧</div>
+        <h1 id="hero-title">Les grillades<br>à l’honneur <em>à Argenteuil.</em></h1>
+        <p>Plats conviviaux, recettes halal, ambiance chaleureuse — prototype de menu du Chalet Des Grillades, Argenteuil.</p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Voir la carte (démo) <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouver le menu idéal</a>
+        </div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 32 Rue Carême Prenant, Argenteuil</span>
+          <span><span class="gold-icon">◷</span> Horaires à confirmer</span>
+        </div>
+      </div>
+      <div class="hero-corner">CARTE DE DÉMONSTRATION <span>✦</span> CHALET DES GRILLADES</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span>
+          <div><strong>Cuisine halal</strong><small>Grillades, pizzas & plus</small></div>
+        </div>
+        <div class="feature"><span>◷</span>
+          <div><strong>Click & Collect</strong><small>Prototype de commande à emporter</small></div>
+        </div>
+        <div class="feature"><span>✦</span>
+          <div><strong>Conseiller intelligent</strong><small>Suggestions personnalisées</small></div>
+        </div>
+        <div class="feature"><span>♡</span>
+          <div><strong>Ambiance conviviale</strong><small>Pour petits et grands groupes</small></div>
+        </div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">DÉCOUVREZ LA DÉMONSTRATION</p>
+          <h2 id="menu-title">La carte <em>de démonstration</em></h2>
+          <p class="sub">Grillades mixtes, pizzas, sandwichs — exemples issus du modèle, à adapter selon le menu officiel du Chalet Des Grillades.</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Prix et visuels pour exemple, non contractuels.</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas</button>
+        <button class="category" data-category="grillades">Grillades</button>
+        <button class="category" data-category="pates">Pâtes</button>
+        <button class="category" data-category="sandwichs">Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Desserts</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Liste indicative pour démo. Recettes, prix, allergènes à confirmer avec Le Chalet Des Grillades. <b>Ne pas commander : prototype non connecté au restaurant.</b></p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> SUGGESTION INTELLIGENTE</p>
+          <h2>Envie d’être conseillé ?<br><em>Sélectionnez, on propose !</em></h2>
+          <p>Indiquez votre préférence, budget, appétit et recevez une suggestion basée sur la carte test (plaisir garanti !).</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre faim</span></div>
+          <p class="muted-small">Démonstration sur carte modèle, sans connexion réelle. Conseil indicatif, plats à vérifier en salle.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div class="ai-star">✦</div>
+            <div><b>Mon menu de démonstration</b><small>Conseil rapide</small></div>
+            <span class="demo-pill">DÉMO</span>
+          </div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Qu'est-ce qui vous ferait plaisir ?</label>
+            <select id="ai-preference">
+              <option value="tout">Je suis ouvert à tout</option>
+              <option value="poulet">Poulet</option>
+              <option value="poisson">Thon / poisson</option>
+              <option value="crevettes">Crevettes</option>
+              <option value="viande">Viande grillée</option>
+            </select>
+            <label for="ai-hunger">Votre niveau de faim ?</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Une faim normale</option>
+              <option value="petite">Une petite faim</option>
+              <option value="grande">Une grosse faim</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu (démo) <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">CLICK & COLLECT • PROTOTYPE</p>
+        <h2>Commandez (pour voir)<br><em>et… c’est fictif !</em></h2>
+        <p class="sub">Expérience 100% démonstration : cliquez, découvrez, mais rien n’est transmis à l’équipe du restaurant.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Sélectionnez vos plats</h3><p>Ajoutez à votre panier virtuel. Aucune commande réelle n’est prise en compte.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Choisissez une heure fictive</h3><p>Le module créneaux est une démonstration et n’est pas relié au restaurant.</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Venez au restaurant… ou juste voir !</h3><p>Vous pourrez visualiser la carte réelle sur place à Argenteuil.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">POUR LE PLAISIR DES PAPILLES</p>
+          <h2>Des grillades,<br><em>à partager.</em></h2>
+          <p>Composez votre menu de démonstration avec une boisson ou un dessert. Pour le vrai goût, rendez visite au Chalet Des Grillades.</p>
+          <a href="#carte" class="btn btn-gold">Explorer la carte <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">C.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">VENEZ NOUS DÉCOUVRIR</p>
+        <h2>À bientôt<br>au <em>Chalet Des Grillades !</em></h2>
+        <p class="sub">Lieu convivial, à Argenteuil – consultez la carte sur place pour toute commande réelle.</p>
+        <div class="info-card"><span>⌖</span>
+          <div>
+            <b>Adresse</b>
+            <p>32 Rue Carême Prenant, 95100 Argenteuil</p>
+            <small>Prototype — vérifiez l’adresse et la carte sur place.</small>
+          </div>
+        </div>
+        <div class="info-card"><span>◷</span>
+          <div>
+            <b>Horaires</b>
+            <p>Horaires à vérifier sur place ou sur les plateformes</p>
+          </div>
+        </div>
+        <div class="info-card"><span>☎</span>
+          <div>
+            <b>Contact</b>
+            <p><span style="color:var(--muted-color)">Téléphone non vérifié</span></p>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="#" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:.6">WhatsApp non connecté</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=32+Rue+Carême+Prenant+95100+Argenteuil" target="_blank" rel="noopener noreferrer">Voir sur Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>LE CHALET DES GRILLADES</p>
+        <strong>ARGENTEUIL</strong>
+        <span>95100 · FRANCE</span>
+        <div class="location-line"></div>
+        <small>Carte disponible au restaurant uniquement</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LE CHALET DES GRILLADES <small>RESTAURANT · HALAL</small></div>
+        <p>Grillades et spécialités halal à Argenteuil – Prototype de carte et de Click & Collect.</p>
+      </div>
+      <div>
+        <b>Navigation</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>32 Rue Carême Prenant</p>
+        <p>95100 Argenteuil</p>
+        <p>Horaires à confirmer</p>
+      </div>
+      <div class="footer-last">
+        <b>Contact</b>
+        <span style="color:var(--muted-color)">Téléphone non vérifié</span>
+        <span style="color:var(--muted-color)">WhatsApp non connecté</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Le Chalet Des Grillades · Prototype / aucun service effectif.</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; filter: grayscale(1); opacity: 0.6;" aria-label="WhatsApp (désactivé)">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">CHALET DES GRILLADES · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Mode local : aucune authentification ni synchronisation avec le restaurant. Démonstration uniquement.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
+```
