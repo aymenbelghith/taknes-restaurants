@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Il Rosso, cuisine italienne halal à Paris 17 (42 Boulevard des Batignolles, 75017 Paris). Site de démonstration : carte indicative, Click & Collect, conseiller menu. Aucun plat ou prix n'est confirmé.">
+  <meta property="og:title" content="Il Rosso • Paris 17e">
+  <meta property="og:description" content="Italien bistronomique, certifié halal et sans alcool. Site démo : carte non contractuelle, commandes non transmises.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Il Rosso | Italien halal • 42 boulevard des Batignolles Paris 17</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+<style>.hero-photo,.promo-photo{background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80)!important;background-size:cover!important;background-position:center!important}</style></head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Il Rosso, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>IL ROSSO</strong><small>RESTAURANT <i>✦</i> ITALIEN HALAL</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions">
+        <a class="phone-link" href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; opacity: 0.5;">
+          <span>☎</span><span>01 87 44 49 49</span>
+        </a>
+        <button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Assiette illustrative (démo) : recette italienne halal, Il Rosso Paris"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> ITALIEN BISTRONOMIQUE · PARIS 17</div>
+        <div class="halal-eyebrow">✧ 100% HALAL · SANS ALCOOL ✧</div>
+        <h1 id="hero-title">La cuisine italienne,<br>Le halal, <em>l’authenticité.</em></h1>
+        <p>Bienvenue à Il Rosso, Paris 17e. Cuisine italienne bistronomique, certifiée halal, sans alcool. Découvrez notre menu de démonstration, basé sur la structure du site officiel. Les prix et photos sont donnés à titre purement indicatif.</p>
+        <div class="hero-ctas">
+          <a href="#carte" class="btn btn-gold">Découvrir notre carte <span>↗</span></a>
+          <a href="#assistant" class="btn btn-outline">✦ Trouve ton menu avec l'IA</a>
+        </div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 42 Bd des Batignolles, Paris 17</span>
+          <span><span class="gold-icon">◷</span> Horaires non confirmés<span class="muted-small"> (voir <a href="https://ilrossoparis.com/" target="_blank" rel="noopener noreferrer" class="link">site officiel</a>)</span></span>
+        </div>
+      </div>
+      <div class="hero-corner">ITALIEN HALAL À PARIS <span>✦</span> IL ROSSO</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Cuisine halal</strong><small>Italienne, sans alcool</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Simulation de commande sans transmission</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller intelligent</strong><small>Suggestion de menu en mode démo</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Ambiance conviviale</strong><small>Au cœur du 17e, Paris</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">DÉCOUVREZ NOS SAVEURS</p>
+          <h2 id="menu-title">La carte <em>Il Rosso</em></h2>
+          <p class="sub">Exemple de propositions italiennes halal. <b>Menu, prix et photos non contractuels</b> — en attente d'informations officielles.</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tous les plats affichés, prix et photos sont des démonstrations issues du modèle. Aucune information de menu ou prix n'est garantie.</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas</button>
+        <button class="category" data-category="grillades">Grillades</button>
+        <button class="category" data-category="pates">Pâtes</button>
+        <button class="category" data-category="sandwichs">Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Desserts</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Carte illustrative, aliments/allergènes à titre indicatif. Pour la carte officielle et allergènes : consultez <a href="https://ilrossoparis.com/menu" target="_blank" rel="noopener noreferrer">ilrossoparis.com/menu</a> ou demandez au restaurant.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> UNE EXPÉRIENCE DIFFÉRENTE</p>
+          <h2>Vous hésitez ?<br><em>On choisit ensemble.</em></h2>
+          <p>Le « conseiller menu » vous propose une suggestion basée sur notre carte de démonstration. Il ne reflète pas la carte ni les prix réels d’Il Rosso.</p>
+          <div class="ai-steps"><span>01&nbsp; Votre budget</span><span>02&nbsp; Vos préférences</span><span>03&nbsp; Votre faim</span></div>
+          <p class="muted-small">Conseiller fictif : suggestions et prix indicatifs.<br>Pour la carte officielle, rendez-vous sur <a href="https://ilrossoparis.com/menu" target="_blank" rel="noopener noreferrer">ilrossoparis.com</a>.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head"><div class="ai-star">✦</div><div><b>Mon menu idéal</b><small>Un conseil en quelques secondes</small></div><span class="demo-pill">DÉMO</span></div>
+          <div class="ai-inputs"><label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label><input type="range" id="ai-budget" min="8" max="35" step="1" value="20"><div class="range-labels"><span>8 €</span><span>35 €</span></div><label for="ai-preference">Qu'est-ce qui vous ferait plaisir ?</label><select id="ai-preference"><option value="tout">Je suis ouvert à tout</option><option value="poulet">Poulet</option><option value="poisson">Thon / poisson</option><option value="crevettes">Crevettes</option><option value="viande">Viande grillée</option></select><label for="ai-hunger">Votre niveau de faim ?</label><select id="ai-hunger"><option value="moyenne">Une faim normale</option><option value="petite">Une petite faim</option><option value="grande">Une grosse faim</option></select><button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu idéal <span>↗</span></button><div id="ai-result" class="ai-result" aria-live="polite" hidden></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">SIMPLE & RAPIDE</p>
+        <h2>Commandez. Récupérez. <em>Savourez.</em></h2>
+        <p class="sub"><b>Click & Collect simulé.</b> Il Rosso ne propose pas encore de commande directe sur son site. Ceci est une démonstration sans transmission de commande réelle.</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Composez votre repas</h3><p>Simulez l’ajout de plats au panier. Aucun paiement, aucun envoi réel.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Sélectionnez votre créneau</h3><p>Cette fonctionnalité est illustrative et n’entraîne aucune réservation.</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>À venir : retrait sur place</h3><p>Paiement prévu sur place, sans application de livraison. Pour commander, consultez la page <a href="https://ilrossoparis.com/" target="_blank" rel="noopener noreferrer">site officiel</a> ou la plateforme de réservation utilisée par Il Rosso.</p></article>
+      </div>
+    </section>
+    <section class="promo container"><div class="promo-photo"></div><div class="promo-overlay"></div><div class="promo-inner"><div><p class="kicker">UNE PETITE ENVIE EN PLUS ?</p><h2>Le plaisir se partage.<br><em>Le goût aussi.</em></h2><p>Complétez votre plat avec une boisson ou un dessert et composez votre repas idéal. <strong>Site de démonstration : aucun plat confirmé</strong>.</p><a href="#carte" class="btn btn-gold">Voir les spécialités <span>↗</span></a></div><span class="promo-monogram">IR.</span></div></section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">RENCONTRONS-NOUS</p>
+        <h2>À bientôt chez <em>Il Rosso</em>.</h2>
+        <p class="sub">Votre pause italienne halal, entre Batignolles et Place de Clichy.</p>
+        <div class="info-card"><span>⌖</span><div><b>Notre adresse</b><p>42 Boulevard des Batignolles, 75017 Paris</p><small>Situation officielle — voir <a href="https://ilrossoparis.com/" target="_blank" rel="noopener noreferrer">site officiel</a></small></div></div>
+        <div class="info-card"><span>◷</span><div><b>Nos horaires</b><p><span style="color:#d99">Horaires non confirmés</span></p><small>Consultez <a href="https://ilrossoparis.com/" target="_blank" rel="noopener noreferrer">ilrossoparis.com</a> pour les horaires à jour.</small></div></div>
+        <div class="info-card"><span>☎</span><div><b>Contact</b><p><a href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; opacity: 0.5;">01 87 44 49 49 (lien désactivé)</a><br><a href="mailto:ilrossoparis@gmail.com">ilrossoparis@gmail.com</a></p></div></div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="mailto:ilrossoparis@gmail.com">Écrire par e-mail ↗</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=42+Boulevard+des+Batignolles+75017+Paris" target="_blank" rel="noopener noreferrer">Voir sur Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>IL ROSSO</p>
+        <strong>PARIS 17</strong>
+        <span>42 Bd des Batignolles</span>
+        <div class="location-line"></div>
+        <small>Italien halal, sans alcool</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">IL ROSSO <small>ITALIEN · HALAL · PARIS</small></div>
+        <p>Authentique cuisine italienne halal, sans alcool.<br><b>Prototype démo (aucune prise de commande réelle).</b></p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Notre carte</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>42 Bd des Batignolles</p>
+        <p>75017 Paris</p>
+        <p><span style="color:#d99">Horaires à vérifier</span></p>
+      </div>
+      <div class="footer-last">
+        <b>Une question ?</b>
+        <a href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; opacity: 0.5;">01 87 44 49 49</a>
+        <a href="mailto:ilrossoparis@gmail.com">E-mail ↗</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Il Rosso · Cette page est un prototype de démonstration. Aucun plat/prix n’est confirmé.</span>
+      <button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="#" tabindex="-1" aria-disabled="true" style="pointer-events: none; opacity: 0.5;" aria-label="WhatsApp non disponible">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">IL ROSSO · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Mode local : aucune authentification ni synchronisation avec un restaurant réel. Ne pas utiliser en production.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script id="taknes-dish-images">(function(){const photos={"pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80","pate":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80","salade":"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80","dessert":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80","grillade":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"};function refresh(){document.querySelectorAll("#product-grid img").forEach(function(img){if(img.dataset.taknesPhoto)return;const card=img.closest("#product-grid > *");const label=((img.alt||"")+" "+(card?.innerText||"")).toLowerCase();let key=/pizza/.test(label)?"pizza":/penne|pâte|pasta|spaghetti|tagliatelle|linguine/.test(label)?"pate":/grill|viande|steak|brochette|poulet|kebab/.test(label)?"grillade":/salade|légume/.test(label)?"salade":/dessert|tiramisu|gâteau|cake/.test(label)?"dessert":null;if(key){img.src=photos[key];img.dataset.taknesPhoto=key;img.style.cssText+=";display:block!important;object-fit:cover!important;width:100%!important;";img.onerror=function(){this.style.display="none";};}else{img.onerror=function(){this.style.display="none";};}})}document.addEventListener("DOMContentLoaded",function(){refresh();const root=document.getElementById("product-grid");if(root)new MutationObserver(refresh).observe(root,{childList:true,subtree:true});});})();</script></body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
