@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Majouja - Cuisine méditerranéenne généreuse au cœur de Paris 9ᵉ. Découvrez la carte en démonstration, commande click & collect (non transmise), et le concept du restaurant situé au 43 Rue Laffitte, 75009 Paris. Aucune réservation possible.">
+  <meta property="og:title" content="Majouja • Paris 9ᵉ">
+  <meta property="og:description" content="Voyagez vers la Méditerranée, à Paris. Démonstration Majouja : carte, click & collect non transmis, et expérience cuisine maison au 43 Rue Laffitte.">
+  <meta property="og:image" content="../assets/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" as="image" href="../assets/hero.webp">
+  <title>Majouja | Cuisine méditerranéenne à Paris 9ᵉ – Démo Click & Collect</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+<style>.hero-photo,.promo-photo{background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80)!important;background-size:cover!important;background-position:center!important}</style></head>
+<body>
+  <div class="demo-banner"><span class="pulse"></span> SITE DE DÉMONSTRATION <span class="banner-divider">•</span> Les commandes ne sont pas transmises à un restaurant</div>
+  <header class="header" id="haut">
+    <div class="nav-wrap container">
+      <a class="brand" href="#haut" aria-label="Majouja, retour en haut">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 65 65" fill="none"><path d="M10 43V30c0-9 6-15 14-15 2-8 9-12 16-10 8 2 11 7 11 12 8 1 12 7 12 14v12" stroke="currentColor" stroke-width="2.4"/><path d="M19 47V30M35 48V24M49 47V29" stroke="currentColor" stroke-width="2.2"/><path d="M10 52h53M17 58h40" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <span class="brand-type"><strong>MAJOUJA</strong><small>CUISINE MÉDITERRANÉENNE</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><span class="phone-link phone-link-disabled" aria-disabled="true"><span>☎</span><span class="muted-small">Numéro non vérifié</span></span><button type="button" class="cart-trigger" id="open-cart" aria-label="Ouvrir mon panier">🛍 <span id="cart-count">0</span></button><button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile"><a href="#carte">Notre carte</a><a href="#assistant">Conseiller menu</a><a href="#concept">Click & Collect</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Spécialités méditerranéennes (démonstration visuelle, photo générique)"></div>
+      <div class="hero-darken"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="line"></span> MAJOUJA – PARIS 9ᵉ</div>
+        <div class="halal-eyebrow">✧ CUISINE MÉDITERRANÉENNE ✧</div>
+        <h1 id="hero-title">La Méditerranée<br>au cœur de <em>Paris.</em></h1>
+        <p>Cuisine maison, plats généreux, épices d’inspiration traditionnelle : découvrez l’expérience Majouja (site de démonstration).</p>
+        <div class="hero-ctas"><a href="#carte" class="btn btn-gold">Découvrir la carte <span>↗</span></a><a href="#assistant" class="btn btn-outline">✦ Conseiller menu intelligent</a></div>
+        <div class="hero-metadata">
+          <span><span class="gold-icon">♢</span> 43 Rue Laffitte, Paris 9ᵉ</span>
+          <span><span class="gold-icon">◷</span> Horaires : non vérifiés</span>
+        </div>
+      </div>
+      <div class="hero-corner">DÉMONSTRATION <span>✦</span> MAJOUJA</div>
+    </section>
+    <div class="feature-bar">
+      <div class="container feature-inner">
+        <div class="feature"><span>✧</span><div><strong>Cuisine méditerranéenne</strong><small>Recettes maison, classiques et revisitées</small></div></div>
+        <div class="feature"><span>◷</span><div><strong>Click & Collect</strong><small>Démonstration commande</small></div></div>
+        <div class="feature"><span>✦</span><div><strong>Conseiller intelligent</strong><small>Suggère des menus</small></div></div>
+        <div class="feature"><span>♡</span><div><strong>Plaisir & partage</strong><small>Générosité et convivialité</small></div></div>
+      </div>
+    </div>
+    <section class="section menu-section container" id="carte" aria-labelledby="menu-title">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">DÉCOUVREZ NOS SAVEURS</p>
+          <h2 id="menu-title">Carte démo <em>Majouja</em></h2>
+          <p class="sub">Carte illustrative, exemples de plats inspirés de Majouja.<br>Les prix, ingrédients et photos sont fictifs (démonstration).</p>
+        </div>
+        <p class="price-note"><span class="note-dot"></span> Tarifs et visuels de démonstration uniquement</p>
+      </div>
+      <div class="categories" role="group" aria-label="Filtrer la carte" id="categories">
+        <button class="category active" data-category="all">Toute la carte</button>
+        <button class="category" data-category="pizzas">Pizzas</button>
+        <button class="category" data-category="grillades">Grillades</button>
+        <button class="category" data-category="pates">Pâtes</button>
+        <button class="category" data-category="sandwichs">Sandwichs & burgers</button>
+        <button class="category" data-category="desserts">Desserts</button>
+        <button class="category" data-category="boissons">Boissons</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="allergen-notice">ⓘ Les visuels, ingrédients et informations allergènes ne sont qu’à titre illustratif. Pour tout besoin ou allergie réelle, se référer uniquement au menu officiel Majouja ou interroger le personnel.</p>
+    </section>
+    <section class="ai-section" id="assistant">
+      <div class="container ai-layout">
+        <div class="ai-copy">
+          <p class="kicker"><span>✦</span> UN CONSEIL EN UN CLIC</p>
+          <h2>Quel menu <br><em>vous inspire ?</em></h2>
+          <p>Testez notre conseiller automatique qui vous suggère des idées selon vos envies, votre budget ou votre faim. Majouja, version démo.</p>
+          <div class="ai-steps"><span>01&nbsp; Budget</span><span>02&nbsp; Préférences</span><span>03&nbsp; Faim</span></div>
+          <p class="muted-small">Version de démonstration. Non connecté au système de commande Majouja. Les conseils ne valent que pour tester l’outil, sans valeur commerciale ni médicale.</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div class="ai-star">✦</div>
+            <div><b>Mon menu idéal</b><small>Testez un conseil automatique</small></div>
+            <span class="demo-pill">DÉMO</span>
+          </div>
+          <div class="ai-inputs">
+            <label for="ai-budget">Quel est votre budget ? <strong id="ai-budget-value">20 €</strong></label>
+            <input type="range" id="ai-budget" min="8" max="35" step="1" value="20">
+            <div class="range-labels"><span>8 €</span><span>35 €</span></div>
+            <label for="ai-preference">Qu'est-ce qui vous ferait plaisir ?</label>
+            <select id="ai-preference">
+              <option value="tout">Ouvert à tout</option><option value="poulet">Poulet</option><option value="poisson">Poisson</option><option value="crevettes">Crevettes</option><option value="viande">Viande grillée</option>
+            </select>
+            <label for="ai-hunger">Votre niveau de faim ?</label>
+            <select id="ai-hunger">
+              <option value="moyenne">Faim normale</option>
+              <option value="petite">Petite faim</option>
+              <option value="grande">Grosse faim</option>
+            </select>
+            <button type="button" id="ai-run" class="btn btn-gold full">✦ Trouver mon menu idéal <span>↗</span></button>
+            <div id="ai-result" class="ai-result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section journey container" id="concept">
+      <div class="journey-header">
+        <p class="kicker">PRATIQUE & MODERNE</p>
+        <h2>Commandez, venez… <em>et dégustez.</em></h2>
+        <p class="sub">Le Click & Collect chez Majouja : consultez la carte, créez votre panier et testez notre commande démo (aucune transmission réelle).</p>
+      </div>
+      <div class="journey-grid">
+        <article><span class="step-num">01</span><span class="journey-symbol">♧</span><h3>Composez votre panier</h3><p>Parcourez les suggestions et ajoutez vos envies.</p></article>
+        <article><span class="step-num">02</span><span class="journey-symbol">◷</span><h3>Choisissez l’heure</h3><p>Simulez un créneau de retrait souhaité.</p></article>
+        <article><span class="step-num">03</span><span class="journey-symbol">✧</span><h3>Retirez sur place</h3><p>La commande ne parvient pas réellement au restaurant — ce site est une démonstration technique.</p></article>
+      </div>
+    </section>
+    <section class="promo container">
+      <div class="promo-photo"></div>
+      <div class="promo-overlay"></div>
+      <div class="promo-inner">
+        <div>
+          <p class="kicker">PARTAGER UN MOMENT</p>
+          <h2>Le goût Majouja.<br><em>À découvrir et tester.</em></h2>
+          <p>Accompagnez votre menu démo d’une boisson ou d’un dessert, à composer selon vos envies. Les visuels sont fictifs, pour illustration seulement.</p>
+          <a href="#carte" class="btn btn-gold">Explorer la carte démo <span>↗</span></a>
+        </div>
+        <span class="promo-monogram">M.</span>
+      </div>
+    </section>
+    <section class="section contact-section container" id="contact">
+      <div class="contact-info">
+        <p class="kicker">VENEZ NOUS DÉCOUVRIR</p>
+        <h2>Majouja vous attend <em>à Paris 9ᵉ</em></h2>
+        <p class="sub">Passez au 43 Rue Laffitte (Paris 9ᵉ) pour savourer notre cuisine méditerranéenne maison.<br>Ce site n’enregistre ni ne transmet aucune commande réelle.</p>
+        <div class="info-card">
+          <span>⌖</span>
+          <div>
+            <b>Adresse Majouja</b>
+            <p>43 Rue Laffitte, 75009 Paris</p>
+            <small>Aucune réservation acceptée</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>◷</span>
+          <div>
+            <b>Horaires</b>
+            <p class="muted-small">Horaires non communiqués publiquement</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>✉</span>
+          <div>
+            <b>Contact e-mail</b>
+            <p><a href="mailto:azul@majouja.fr">azul@majouja.fr</a></p>
+            <small>E‑mail visible sur TripAdvisor, non confirmé sur site officiel</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>☎</span>
+          <div>
+            <b>Téléphone</b>
+            <p><span class="muted-small">Numéro absent du site officiel – non vérifié</span></p>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=43+Rue+Laffitte+75009+Paris" target="_blank" rel="noopener noreferrer">Voir Majouja sur Maps ↗</a>
+        </div>
+      </div>
+      <div class="location-visual">
+        <div class="location-ornament">✥</div>
+        <p>MAJOUJA</p><strong>PARIS 9ᵉ</strong><span>43 Rue Laffitte</span><div class="location-line"></div><small>Proximité Métro Le Peletier & Notre-Dame-de-Lorette</small>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">MAJOUJA <small>CUISINE MÉDITERRANÉENNE</small></div>
+        <p>Expérience démonstrative : la véritable carte Majouja n’est pas accessible ici.<br><strong>Les commandes ou réservations ne sont pas transmises.</strong></p>
+      </div>
+      <div>
+        <b>Explorer</b>
+        <a href="#carte">Carte démo</a>
+        <a href="#assistant">Conseiller menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <b>Adresse</b>
+        <p>43 Rue Laffitte</p>
+        <p>75009 Paris</p>
+        <p class="muted-small">Horaires : non confirmés</p>
+      </div>
+      <div class="footer-last">
+        <b>Contact</b>
+        <a href="mailto:azul@majouja.fr">azul@majouja.fr</a>
+        <span class="muted-small">Numéro non affiché sur site</span>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Majouja, démonstration de site menu interactif. Prototype sans commande réelle.</span><button type="button" id="admin-open" class="link-button">Espace restaurateur (démo) ↗</button></div>
+  </footer>
+  <a class="whatsapp-float" href="#" tabindex="-1" aria-label="WhatsApp désactivé pour Majouja" style="pointer-events:none;opacity:0.2;">✆</a>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true"><div class="drawer-top"><div><small>CLICK & COLLECT · DÉMO</small><h2>Votre panier <span id="drawer-count">(0)</span></h2></div><button type="button" class="close-btn" id="cart-close" aria-label="Fermer">×</button></div><div id="drawer-content" class="drawer-content"></div></aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true"><button type="button" class="close-btn modal-close" id="product-close" aria-label="Fermer">×</button><div id="modal-content"></div></div>
+  <div class="modal admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true"><button type="button" class="close-btn modal-close" id="admin-close" aria-label="Fermer">×</button><div class="admin-heading"><p class="kicker">MAJOUJA · ESPACE PRIVÉ</p><h2 id="admin-title">Tableau restaurateur <em>démo</em></h2><p>Démonstration sans lien réel avec Majouja. Pas d’authentification, pas de synchronisation.</p></div><div id="admin-content"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script id="taknes-dish-images">(function(){const photos={"pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80","pate":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80","salade":"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80","dessert":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80","grillade":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"};function refresh(){document.querySelectorAll("#product-grid img").forEach(function(img){if(img.dataset.taknesPhoto)return;const card=img.closest("#product-grid > *");const label=((img.alt||"")+" "+(card?.innerText||"")).toLowerCase();let key=/pizza/.test(label)?"pizza":/penne|pâte|pasta|spaghetti|tagliatelle|linguine/.test(label)?"pate":/grill|viande|steak|brochette|poulet|kebab/.test(label)?"grillade":/salade|légume/.test(label)?"salade":/dessert|tiramisu|gâteau|cake/.test(label)?"dessert":"grillade";if(key){img.src=photos[key];img.dataset.taknesPhoto=key;img.style.cssText+=";display:block!important;object-fit:cover!important;width:100%!important;";img.onerror=function(){if(this.dataset.taknesFallback)return;this.dataset.taknesFallback="1";this.src=photos.grillade;};}else{img.onerror=function(){this.style.display="none";};}})}document.addEventListener("DOMContentLoaded",function(){refresh();const root=document.getElementById("product-grid");if(root)new MutationObserver(refresh).observe(root,{childList:true,subtree:true});});})();</script></body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c0f452ff-fd78-4b18-9f21-662c92876af9" data-app-host="app.netlify.com" data-account-tier="free"></script>
