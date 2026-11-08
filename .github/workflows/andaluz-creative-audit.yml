@@ -1,0 +1,56 @@
+name: Andaluz Creative source audit
+on:
+  push:
+    paths:
+      - '.github/workflows/andaluz-creative-audit.yml'
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Fetch originals and archive hashes
+        shell: bash
+        run: |
+          mkdir -p audit/originals
+          cat > audit/run.py <<'PY'
+          import hashlib,json,pathlib,urllib.request,datetime
+          root=pathlib.Path("audit")
+          entries=[
+            ("TR Designs","https://trdesigns.co/products/symphony-carved-tray-floral-bliss","https://trdesigns.co/cdn/shop/files/26_156265be-4f67-4b32-90a7-c1eccb4ed4e8.jpg?v=1743784001&width=700"),
+            ("Bits & Pieces","https://www.bitsandpieces.ae/collections/vases-1/products/decorative-beige-vase-with-handles","https://www.bitsandpieces.ae/cdn/shop/files/Glassvase.webp?v=1769353912&width=480")]
+          results=[]
+          for i,(name,page,url) in enumerate(entries):
+            record={"prospect":name,"product_page":page,"source_url":url,"status":"NON VALIDÉ"}
+            try:
+              req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
+              with urllib.request.urlopen(req,timeout=25) as resp:
+                data=resp.read(15000000)
+                record["http_status"]=resp.status
+                record["content_type"]=resp.headers.get("Content-Type")
+              suffix=".webp" if data[:4]==b"RIFF" and data[8:12]==b"WEBP" else ".jpg" if data[:3]==bytes.fromhex("ffd8ff") else ".bin"
+              if suffix==".bin": raise ValueError("Unknown image signature")
+              dest=root/"originals"/(str(i+1)+suffix)
+              dest.write_bytes(data)
+              record.update(original_file=str(dest),sha256=hashlib.sha256(data).hexdigest(),bytes=len(data),status="ORIGINAL ARCHIVÉ — COMPOSITING NON VALIDÉ")
+              try:
+                from PIL import Image
+                with Image.open(dest) as im:
+                  im.verify()
+                with Image.open(dest) as im:
+                  record["dimensions"]=list(im.size)
+              except Exception as e: record["image_validation_error"]=str(e);record["status"]="NON VALIDÉ"
+            except Exception as e:record["error"]=str(e)
+            results.append(record)
+          (root/"report.json").write_text(json.dumps({"utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"results":results,"before_after_validated":0,"gmail_drafts":0,"messages_sent":0,"note":"No AI product regeneration. No masks or composites created. Human contour and pixel-preservation audit required."},ensure_ascii=False,indent=2))
+          print((root/"report.json").read_text())
+          PY
+          python -m pip install --quiet pillow
+          python audit/run.py
+      - name: Archive original files and report
+        uses: actions/upload-artifact@v4
+        with:
+          name: andaluz-creative-source-audit
+          path: audit/
+          retention-days: 30
